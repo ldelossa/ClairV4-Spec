@@ -34,8 +34,8 @@ When the **GET** is issued this node will retrieve the **claircore.IndexReport**
 The follow section shows the client facing API usage.   
 Refer to [api](./api.md) section for full object schemas.  
 
-### Index a claircore.Manifest 
-see [Layer](./api.md#layer) for more information.
+### Index a claircore.Manifest (Indexer Mode)
+see [Layer](./api.md#layer)  
 
     /api/v1/index
     POST
@@ -54,7 +54,18 @@ see [Layer](./api.md#layer) for more information.
     	]
     }
 
-### Match for Vulnerabilities 
+### Retrieve IndexReport (Indexer Mode)  
+see [IndexReport](./api.md#IndexReport/IndexRecord)  
+
+    /api/v1/index_report/{manifest_hash}  
+    GET
+
+    returned
+    <IndexReport>
+
+### Match for Vulnerabilities (Matcher Mode)
+see [Package](./api.md#Package)  
+    [Vulnerability](./api.md#Vulnerability)  
 
     /api/v1/match/{manifest_hash}
     GET
