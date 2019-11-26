@@ -1,8 +1,8 @@
 # API
 
-This section of the spec provide API schema declarations. 
-Schemas will be provided in Golang struct syntax. 
-Note json tags marked "-" are not included in JSON marshalling.
+This section of the spec provide API schema declarations.  
+Schemas will be provided in Golang struct syntax.  
+Note json tags marked "-" are not included in JSON marshalling.  
 
 ## Distribution
     // Distribution is the accompanying system context of a package. this
@@ -164,23 +164,23 @@ Note json tags marked "-" are not included in JSON marshalling.
     }
 
 ## VulnerabilityReport/Details
-type Details struct {
-	// the package details which matched the associated vulnerability
-	AffectedPackage Package `json:"affected_package"`
-	// the layer hash within the image the package was introduced
-	IntroducedIn string `json:"introduced_in"`
-	// the version in which the package no longer is affected by the associated
-	// vulnerability
-	FixedInVersion string `json:"fixed_in_version"`
-}
+    type Details struct {
+        // the package details which matched the associated vulnerability
+        AffectedPackage Package `json:"affected_package"`
+        // the layer hash within the image the package was introduced
+        IntroducedIn string `json:"introduced_in"`
+        // the version in which the package no longer is affected by the associated
+        // vulnerability
+        FixedInVersion string `json:"fixed_in_version"`
+    }
 
-type VulnerabilityReport struct {
-	// manifest hash this vulnerability report is describing
-	Hash string `json:"manifest_hash"`
-	// found vulnerabilities key'd by ids
-	Vulnerabilities map[int]*Vulnerability `json:"vulnerabilities"`
-	// details explaining affected packages. key'd by vulnerability id
-	Details map[int][]Details `json:"details"`
-}
+    type VulnerabilityReport struct {
+        // manifest hash this vulnerability report is describing
+        Hash string `json:"manifest_hash"`
+        // found vulnerabilities key'd by ids
+        Vulnerabilities map[int]*Vulnerability `json:"vulnerabilities"`
+        // details explaining affected packages. key'd by vulnerability id
+        Details map[int][]Details `json:"details"`
+    }
 
 
