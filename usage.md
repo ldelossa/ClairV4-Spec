@@ -41,12 +41,12 @@ see [Layer](./api.md#layer)
     POST
 
     {
-    	"hash": <string>, // image content addressable hash
-    	"layers": [ // list of layer objects in manifest order
+    	"hash": <string>,
+    	"layers": [
     		{
-    			"hash": <string>, // layer content addressable hash
+    			"hash": <string>,
     			"remote_path": {
-    				"uri": <string> // http(s) location of layer contents
+    				"uri": <string>,
     				"headers": <map<string><[]string>>
     			}
     		},
@@ -74,17 +74,14 @@ see [Package](./api.md#Package)
 
     // claircore.VulnerabilityReport
     {
-    	"hash": <string>, // image content addressable hash
-    	"vulnerabilities": <map<int><Vulnerability>>, // a map of vulnerabilities affecting this image key'd by vulnerability ID
-    	"details": <map<int><Details>> // a map associating the vulnerability ID with the details
+    	"hash": <string>,
+    	"vulnerabilities": <map<int><Vulnerability>>,
+    	"details": <map<int><Details>>
     }
     
     // claircore.Details
     {
-    	"affected_package": <Package>, // a Package api object affected by the associated vulnerability
-    	"introduced_in": <string>, // the layer hash the package was introduced in
-    	"fixed_in_version": <string>, // the package version the associated vulnerability is remediated
+    	"affected_package": <Package>,
+    	"introduced_in": <string>,
+    	"fixed_in_version": <string>
     }
-
-	
-
